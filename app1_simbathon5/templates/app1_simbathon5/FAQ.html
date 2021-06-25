@@ -3,11 +3,21 @@
 
 {% block content %}
 
-<h1>FAQ 무엇이든 물어보세요</h1> 
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/font.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fqa_css.css' %}">
 
 
-<h1>글 목록</h1>
+</head>
+<h2> 자주 묻는 질문들 </h2>
+{% for faq in faqs %}
+<section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+    <div class="container">
 
+<<<<<<< HEAD
 <div>
 	<div >
         <h2><a href="{%url 'app1_simbathon5:new'%}">글쓰기</a></h2>
@@ -28,5 +38,28 @@
     </div>
     
 </div>
+=======
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+              <h3 class="panel-title">
+                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0"></a>
+			        	{{faq.title}}</a>
+              </h3>
+            </div>
+            <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+              <div class="panel-body px-3 mb-4">
+                {{faq.body}}
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
+	{%endfor%}
+
+>>>>>>> 03e0cd0f2be0bc22da235a458a950329911be3d0
 
 {% endblock %}
+
+
+
