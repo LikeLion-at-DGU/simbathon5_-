@@ -57,7 +57,7 @@
   .left-main .main-wrap .main-day {
     padding: 10% 0;
     font-size: 30px;
-    color: #f3f594;
+    color: #fdea92;
   }
   .left-main .main-wrap .main-date {
     margin: 10% 0;
@@ -168,7 +168,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #df921e;
+    background: rgb(216, 161, 43);
     width: 400px;
     height: 300px;
     z-index: 1;
@@ -216,3 +216,4 @@
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
   }
+
