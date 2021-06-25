@@ -9,15 +9,24 @@
 <h1>글 목록</h1>
 
 <div>
-	{% for faq in faqs %}
-	<div>
-		<h3>{{faq.title}}</h3>
-		{{faq.writer}}<br>
-		{{faq.summary}}
-        <a href="{%url 'deatil' faq.id %}">...자세히</a>
-		<br>
-	</div>
-	{%endfor%}
+	<div >
+        <h2><a href="{%url 'app1_simbathon5:new'%}">글쓰기</a></h2>
+    </div>
+
+    <div >글목록</div>
+
+    <br><br>
+    <div>
+        {% for post in faqs %}
+        <div>
+            <h5>{{post.title}}</h5>
+            {{post.writer}}<br>
+            {{post.summary}}<br>
+            <a href= "{%url 'app1_simbathon5:detail' post.id %}">..자세히</a>
+        </div>
+        {%endfor%}
+    </div>
+    
 </div>
 
 {% endblock %}

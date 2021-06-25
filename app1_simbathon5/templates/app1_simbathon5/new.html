@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div>
+    <form action= "{%url 'app1_simbathon5:create'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <p>제목 : <input type="text" name="title"></p>
+        <p>내용 : <textarea type="text" name="body" id="" cols="30" row="10"></textarea></p>
+        
+        <button type="subimit">제출</button>
+    </form>
+</div>
+{% endblock %}

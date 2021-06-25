@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <h1>글 수정하기</h1>
+    <form action="{% url 'app1_simbathon5:update' post.id%}" method="post">
+        {%csrf_token%}
+        <p>제목: <input type="text" name="title" value="{{post.title}}"></p>
+        <p>내용: <input type="text" name="body" id="" cols="30" rows="10"{{post.body}}></p>
+        <button type="submit">제출</button>
+    </form>
+</div>
+
+{% endblock %}
