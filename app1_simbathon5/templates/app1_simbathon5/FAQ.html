@@ -17,6 +17,28 @@
 <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
     <div class="container">
 
+<<<<<<< HEAD
+<div>
+	<div >
+        <h2><a href="{%url 'app1_simbathon5:new'%}">글쓰기</a></h2>
+    </div>
+
+    <div >글목록</div>
+
+    <br><br>
+    <div>
+        {% for post in faqs %}
+        <div>
+            <h5>{{post.title}}</h5>
+            {{post.writer}}<br>
+            {{post.summary}}<br>
+            <a href= "{%url 'app1_simbathon5:detail' post.id %}">..자세히</a>
+        </div>
+        {%endfor%}
+    </div>
+    
+</div>
+=======
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
@@ -35,6 +57,7 @@
   </section>
 	{%endfor%}
 
+>>>>>>> 03e0cd0f2be0bc22da235a458a950329911be3d0
 
 {% endblock %}
 
