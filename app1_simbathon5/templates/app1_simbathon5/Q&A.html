@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<div >
+    <h2><a href="{%url 'app1_simbathon5:newcopy'%}">글쓰기</a></h2>
+</div>
+
+<body>
+    {% for post in qnaobject %}
+        <p>ㅡㅡㅡㅡㅡㅡㅡ</p>
+        <p>제목 : {{ post.title }}</p>
+        <p>글 유형 : {{ post.content_type }}</p>
+        <p>글 내용 : {{ post.content }}</p>
+        <p>글쓴 날짜 : {{ post.write_date }}</p>
+        <p>ㅡㅡㅡㅡㅡㅡㅡ</p>
+        <a href= "{%url 'app1_simbathon5:detail' post.id %}"></a>
+    {% endfor %}
+</body>
+</html>
+
+{% endblock %}
