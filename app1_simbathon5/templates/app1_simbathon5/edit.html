@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>글 수정하기</h1>
-    <form action="{%url 'app1_simbathon5:create'%}" method="post" enctype="multipart/form-data">
+    <form action="{%url 'app1_simbathon5:update' post.id%}" method="post" enctype="multipart/form-data">
         {%csrf_token%}
         <p>제목 : <input type="text" name="title" value ="{{post.title}}"></p>
 
@@ -13,7 +13,7 @@
             <p>{{post.iamge_name}}</p>
         {% endif %}
 
-        <p>내용 : <textarea type="text" name="body" id="" cols="30" rows="10">{{post.body}}></textarea></p>
+        <p>내용 : <textarea type="text" name="body" id="" cols="30" rows="10">{{post.body}}</textarea></p>
         <button type = "submit">제출</button>
     </form>
 </div>

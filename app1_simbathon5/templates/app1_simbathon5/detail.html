@@ -11,6 +11,8 @@
 {%endif%}
 
 <p>{{post.body}}</p>
+{% if user == post.writer %}
 <a href = "{%url 'app1_simbathon5:edit' post.id%}">수정하기</a>
 <a href = "{%url 'app1_simbathon5:delete' post.id%}">삭제하기</a>
+{% endif %}
 {% endblock %}
