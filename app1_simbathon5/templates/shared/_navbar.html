@@ -29,14 +29,14 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'app1_simbathon5:frequentlyaskedquestions' %}">자주 묻는 질문들</a>
       </li>
-      <a class="nav-link" href="{% url 'app1_simbathon5:qna' %}">1:1 질문하기</a>
-    </li>
+      <a class="nav-link" href="{% url 'app1_simbathon5:post' %}">1:1 질문하기</a>
 
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expended="false">Account</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           {% if user.is_authenticated %}
+          <li><a class="nav-link" href="{% url 'users:mypage' %}">mypage</a></li>
           <li><a class="dropdown-item" href ="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
           <li><a class="dropdown-item" href ="{% url 'account_login' %}">Login</a></li>

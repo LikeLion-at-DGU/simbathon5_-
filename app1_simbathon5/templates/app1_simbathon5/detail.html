@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<h1><a>{{post.title}}</h1>
+작성자 : {{post.writer}}<br>
+날짜 : {{post.pub_date}}
+<hr>
+{% if post.image %}
+  <p><img src="{{ post.image.url }}" alt="사진"></p>
+{%endif%}
+
+<p>{{post.body}}</p>
+<a href = "{%url 'app1_simbathon5:edit' post.id%}">수정하기</a>
+<a href = "{%url 'app1_simbathon5:delete' post.id%}">삭제하기</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1>{{user.username}}</h1><hr>
+    <div>
+        {% for post in posts %}
+            <h3><a href = " {%url 'app1_simbathon5:detail' post.id %}">{{post.title}}</a></h3>
+            {{post.writer}}<br>
+            {{post.summary}}
+            <a href = "{% url 'app1_simbathon5:detail' post.id %}">...자세히</a><hr>
+            {% endfor %}
+    </div>
+</div>
+
+
+</div>
+
+{% endblock %}
