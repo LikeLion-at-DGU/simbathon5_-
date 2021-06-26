@@ -27,6 +27,7 @@
         <button type="button"  class="btn"> <a href ="{% url 'account_logout' %}">Logout</a></button>
         <button type="button"  class="btn"> <a href ="{% url 'app1_simbathon5:frequentlyaskedquestions' %}">Q&A</a></button>
         {% else %}
+        
         <button type="button"  class="btn"> <a href = "{% url 'account_login' %}" >login</a></button>
         {% endif %}
     </div>
