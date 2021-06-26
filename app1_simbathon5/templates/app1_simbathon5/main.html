@@ -12,15 +12,16 @@
         <link rel="stylesheet" href="{% static 'css/font.css' %}">
         <link rel="stylesheet" href="{% static 'css/bg.css' %}">
 
-        <title>중앙동아리방 예약 서비스</title>
+        <title>동방예의지국</title>
 
     </head>
 
 <body>
 <section> 
     <div class="bg"> 
-        <h1>동국대학교 중앙동아리방 예약 서비스</h1> 
-        <p>코시국 동아리방을 이용하고 싶다면 로그인 후 예약하자!</p> 
+        <h1><span style="color:rgb(250, 242, 199)">동방예의지국</span></h1> 
+        <h2><span style="color:red">동</span>아리<span style="color:red">방 예</span>약<span style="color:red">의 지</span>존 - 동<span style="color:red">국</span>대</h2>
+        <p>코시국 중앙동아리방을 이용하고 싶다면 로그인 후 예약하자!</p> 
         
         {% if user.is_authenticated %}
         <button type="button"  class="btn"> <a href = "{% url 'app1_simbathon5:book' %}" >예약하기</a></button>
