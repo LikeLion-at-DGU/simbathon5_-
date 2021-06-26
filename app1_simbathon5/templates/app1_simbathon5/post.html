@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fqa_css.css' %}">
+</head>
+<body>
+    <br><br>
+    <button type="button"  style="background-color:#ffffdf;" > <a href = "{% url 'app1_simbathon5:new' %}" >문의하기</a></button>
+    {% if user.is_authenticated %}
+    <br><br>
+
+    <h1>1:1 문의 목록</h1>
+
+    {% for post in posts %}
+    <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+        <div class="container">
+    
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+                  <h3 class="panel-title">
+                    {{post.title}}
+                  </h3>
+                    <div class="panel-body px-3 mb-4">
+                        {{post.writer}}<br>
+                        {{post.summary}}
+                        <a href = "{% url 'app1_simbathon5:detail' post.id %}">...자세히</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+      </section>
+    {%endfor%}
+    {% else %}
+    <h3>로그인 후 이용 가능</h3>
+    <a href = "{% url 'account_login' %}" class="btn btn-warning">로그인</a>
+    <a href = "{% url 'account_signup' %}" class="btn btn-warning">회원가입</a>
+    {% endif %}
+</body>
+{% endblock %}
