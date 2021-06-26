@@ -1,8 +1,7 @@
 from django.db.models.query_utils import Q
 from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
-from .models import FAQ
-from .models import Post
+from .models import FAQ, Post, Comment
 
 # Create your views here.
 
@@ -21,7 +20,8 @@ def main(request):
 
 def detail(request, id):
     post = get_object_or_404(Post, pk=id)
-    return render(request, 'app1_simbathon5/detail.html', {'post' : post})
+    all_comments = post.comments.all().order_by('-created_at')
+    return render(request, 'app1_simbathon5/detail.html', {'post' : post,'comments':all_comments})
 
 def post(request):
     posts = Post.objects.all()
@@ -45,7 +45,6 @@ def edit(request, id):
     edit_post = Post.objects.get(id =id)
     return render(request, 'app1_simbathon5/edit.html', {'post': edit_post})
 
-
 def update(request, id):
     update_post = Post.objects.get(id=id)
     update_post.title=request.POST['title']
@@ -61,3 +60,11 @@ def delete(request, id):
     delete_post = Post.objects.get(id=id)
     delete_post.delete()
     return redirect('app1_simbathon5:post')
+
+def create_comment(request, post_id):
+    if request.method == "POST":
+        post = get_object_or_404(Post, pk=post_id)
+        current_user = request.user
+        comment_content = request.POST.get('content')
+        Comment.objects.create(content=comment_content, writer=current_user, post=post)
+    return redirect('app1_simbathon5:detail', post_id)

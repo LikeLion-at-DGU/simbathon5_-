@@ -15,4 +15,15 @@
 <a href = "{%url 'app1_simbathon5:edit' post.id%}">수정하기</a>
 <a href = "{%url 'app1_simbathon5:delete' post.id%}">삭제하기</a>
 {% endif %}
+<br><br><br>
+<div>
+  {% for comment in comments %}
+  <div>
+    <hr>
+    작성자 : {{comment.writer}}<br>
+    {{comment.content}}
+  </div>
+  {% endfor %}
+</div>
+
 {% endblock %}
