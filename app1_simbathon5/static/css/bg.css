@@ -1,5 +1,5 @@
 .bg{ 
-    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0.3, 0, 0, 0.3) ),url(../image/배경.jpg);
+    background-image: linear-gradient( rgba(1, 0.5, 0.5, 1), rgba(0.5, 0.5, 0.5, 0.5) ),url(../image/배경.jpg);
     background-color:rgba(0, 0, 0, 0.5); 
     background-position: center;
     height: 100%;
